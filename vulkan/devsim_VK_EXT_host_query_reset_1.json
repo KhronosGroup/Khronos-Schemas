@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://schema.khronos.org/vulkan/devsim_VK_EXT_host_query_reset_1.json#",
+    "title": "JSON schema for Vulkan device simulation layer configuration file",
+    "description": "Schema for VK_EXT_host_query_reset data structures, as used to configure the device simulation layer.",
+    "type": "object",
+    "additionalProperties": true,
+
+    "definitions": {
+        "$schema": {"type": "string", "format": "uri"},
+        "uint32_t": {"type": "integer", "minimum": 0, "maximum": 4294967295},
+        "VkBool32": {"$ref": "#/definitions/uint32_t"},
+        "VkPhysicalDeviceHostQueryResetFeaturesEXT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "hostQueryReset": {"$ref": "#/definitions/VkBool32"}
+            }
+        }
+    },
+    
+    "required": ["$schema"],
+    "properties": {
+        "$schema": {"$ref": "#/definitions/$schema"},
+        "VkPhysicalDeviceHostQueryResetFeaturesEXT": {"$ref": "#/definitions/VkPhysicalDeviceHostQueryResetFeaturesEXT"},
+        "features": {"type": "null"},
+        "comments": {"type": "object"}
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://schema.khronos.org/vulkan/devsim_VK_KHR_depth_stencil_resolve_1.json#",
+    "title": "JSON schema for Vulkan device simulation layer configuration file",
+    "description": "Schema for VK_KHR_depth_stencil_resolve data structures, as used to configure the device simulation layer.",
+    "type": "object",
+    "additionalProperties": true,
+
+    "definitions": {
+        "$schema": {"type": "string", "format": "uri"},
+        "uint32_t": {"type": "integer", "minimum": 0, "maximum": 4294967295},
+        "int32_t": {"type": "integer", "minimum": -2147483648, "maximum": 2147483647},
+        "enum": {"$ref": "#/definitions/int32_t"},
+        "VkBool32": {"$ref": "#/definitions/uint32_t"},
+        "VkResolveModeFlagsKHR": {"$ref": "#/definitions/enum"},
+        "VkPhysicalDeviceDepthStencilResolvePropertiesKHR": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "supportedDepthResolveModes": {"$ref": "#/definitions/VkResolveModeFlagsKHR"},
+                "supportedStencilResolveModes": {"$ref": "#/definitions/VkResolveModeFlagsKHR"},
+                "independentResolveNone": {"$ref": "#/definitions/VkBool32"},
+                "independentResolve": {"$ref": "#/definitions/VkBool32"}
+            }
+        }
+    },
+    
+    "required": ["$schema"],
+    "properties": {
+        "$schema": {"$ref": "#/definitions/$schema"},
+        "VkPhysicalDeviceDepthStencilResolvePropertiesKHR": {"$ref": "#/definitions/VkPhysicalDeviceDepthStencilResolvePropertiesKHR"},
+        "properties": {"type": "null"},
+        "comments": {"type": "object"}
+    }
+}
