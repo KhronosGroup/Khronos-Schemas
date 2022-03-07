@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"main.scss",
+		"_sass/minima.scss"
+	],
+	"sourcesContent": [
+		"@import \"minima\";\n",
+		"* {\n    box-sizing: border-box;\n}\n\nbody {\n    padding-top: 50px;\n    padding-bottom: 40px;\n    margin: 0;\n    background-color: #eee;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-size: 14px;\n    line-height: 1.5;\n    color: #333;\n}\n\n.container {\n    width: 1170px;\n    padding-right: 15px;\n    padding-left: 15px;\n    margin-right: auto;\n    margin-left: auto;\n}\n\na {\n    color: #337ab7;\n    text-decoration: none;\n}\n\nh1 {\n  font-size: 400%;\n  font-weight: 100;\n}\n\nh1.error_header {\n  text-align: center;\n  font-size: 600%;\n  font-weight: 100;\n}\n\na.btn {\n    padding: 3px 5px;\n    color: #fff;\n    background-color: #0366d6;\n    margin-right: 5px;\n    border-radius: 4px;\n    box-sizing: border-box;\n    text-decoration: none;\n}\na.btn:hover {\n    color: #fff;\n    background-color: #024ea4;\n  }"
+	],
+	"names": [],
+	"mappings": "ACAA,AAAA,CAAC,CAAC,EACE,UAAU,EAAE,UAAU,GACzB;;AAED,AAAA,IAAI,CAAC,EACD,WAAW,EAAE,IAAI,EACjB,cAAc,EAAE,IAAI,EACpB,MAAM,EAAE,CAAC,EACT,gBAAgB,EAAE,IAAI,EACtB,WAAW,EAAE,8CAA8C,EAC3D,SAAS,EAAE,IAAI,EACf,WAAW,EAAE,GAAG,EAChB,KAAK,EAAE,IAAI,GACd;;AAED,AAAA,UAAU,CAAC,EACP,KAAK,EAAE,MAAM,EACb,aAAa,EAAE,IAAI,EACnB,YAAY,EAAE,IAAI,EAClB,YAAY,EAAE,IAAI,EAClB,WAAW,EAAE,IAAI,GACpB;;AAED,AAAA,CAAC,CAAC,EACE,KAAK,EAAE,OAAO,EACd,eAAe,EAAE,IAAI,GACxB;;AAED,AAAA,EAAE,CAAC,EACD,SAAS,EAAE,IAAI,EACf,WAAW,EAAE,GAAG,GACjB;;AAED,AAAA,EAAE,AAAA,aAAa,CAAC,EACd,UAAU,EAAE,MAAM,EAClB,SAAS,EAAE,IAAI,EACf,WAAW,EAAE,GAAG,GACjB;;AAED,AAAA,CAAC,AAAA,IAAI,CAAC,EACF,OAAO,EAAE,OAAO,EAChB,KAAK,EAAE,IAAI,EACX,gBAAgB,EAAE,OAAO,EACzB,YAAY,EAAE,GAAG,EACjB,aAAa,EAAE,GAAG,EAClB,UAAU,EAAE,UAAU,EACtB,eAAe,EAAE,IAAI,GACxB;;AACD,AAAA,CAAC,AAAA,IAAI,CAAC,KAAK,CAAC,EACR,KAAK,EAAE,IAAI,EACX,gBAAgB,EAAE,OAAO,GAC1B"
+}
