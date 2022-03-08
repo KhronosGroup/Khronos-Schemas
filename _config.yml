@@ -1,0 +1,13 @@
+
+title: Khronos Schemas
+email: webservices@khronosgroup.org
+description: >- 
+  A collection of Khronos Schemas. This site is backed by github.com/KhronosGroup/Khronos-Schemas
+baseurl: ""
+url: "https://schema.khronos.org"
+twitter_username: thekhronosgroup
+github_username:  khronosgroup
+
+theme: minima
+plugins:
+  - jekyll-feed
