@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Khronos Schemas
+Upstream-Contact: The Khronos Group, Inc
+Source: https://github.com/KhronosGroup/Khronos-Schemas
+
+Files: *
+Copyright: 2022 The Khronos Group, Inc.
+License: Apache-2.0
