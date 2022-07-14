@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://schema.khronos.org/vulkan/profiles-0.8-latest.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.3.218",
+    "title": "Vulkan Profiles Schema for Vulkan 1.3.219",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -940,6 +940,15 @@
                 }
             }
         },
+        "VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "multisampledRenderToSingleSampled": {
+                    "type": "boolean"
+                }
+            }
+        },
         "VkPhysicalDeviceMultiviewFeatures": {
             "type": "object",
             "additionalProperties": false,
@@ -1458,6 +1467,15 @@
             "additionalProperties": false,
             "properties": {
                 "shaderIntegerFunctions2": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "shaderModuleIdentifier": {
                     "type": "boolean"
                 }
             }
@@ -2715,6 +2733,7 @@
                 "VK_DRIVER_ID_INTEL_PROPRIETARY_WINDOWS",
                 "VK_DRIVER_ID_INTEL_PROPRIETARY_WINDOWS_KHR",
                 "VK_DRIVER_ID_JUICE_PROPRIETARY",
+                "VK_DRIVER_ID_MESA_DOZEN",
                 "VK_DRIVER_ID_MESA_LLVMPIPE",
                 "VK_DRIVER_ID_MESA_PANVK",
                 "VK_DRIVER_ID_MESA_RADV",
@@ -3525,6 +3544,20 @@
                 }
             }
         },
+        "VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "shaderModuleIdentifierAlgorithmUUID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/uint8_t"
+                    },
+                    "uniqueItems": false,
+                    "maxItems": 16
+                }
+            }
+        },
         "VkPhysicalDeviceShaderSMBuiltinsPropertiesNV": {
             "type": "object",
             "additionalProperties": false,
@@ -4225,6 +4258,15 @@
                 }
             }
         },
+        "VkSubpassResolvePerformanceQueryEXT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "optimal": {
+                    "type": "boolean"
+                }
+            }
+        },
         "formatProperties": {
             "type": "object",
             "additionalProperties": false,
@@ -4243,6 +4285,9 @@
                 },
                 "VkFormatProperties3KHR": {
                     "$ref": "#/definitions/VkFormatProperties3"
+                },
+                "VkSubpassResolvePerformanceQueryEXT": {
+                    "$ref": "#/definitions/VkSubpassResolvePerformanceQueryEXT"
                 }
             }
         },
@@ -4760,6 +4805,9 @@
                             "VK_EXT_multi_draw": {
                                 "type": "integer"
                             },
+                            "VK_EXT_multisampled_render_to_single_sampled": {
+                                "type": "integer"
+                            },
                             "VK_EXT_non_seamless_cube_map": {
                                 "type": "integer"
                             },
@@ -4827,6 +4875,9 @@
                                 "type": "integer"
                             },
                             "VK_EXT_shader_image_atomic_int64": {
+                                "type": "integer"
+                            },
+                            "VK_EXT_shader_module_identifier": {
                                 "type": "integer"
                             },
                             "VK_EXT_shader_stencil_export": {
@@ -5604,6 +5655,9 @@
                             "VkPhysicalDeviceMultiDrawFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceMultiDrawFeaturesEXT"
                             },
+                            "VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT": {
+                                "$ref": "#/definitions/VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT"
+                            },
                             "VkPhysicalDeviceMultiviewFeatures": {
                                 "$ref": "#/definitions/VkPhysicalDeviceMultiviewFeatures"
                             },
@@ -5756,6 +5810,9 @@
                             },
                             "VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL"
+                            },
+                            "VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT": {
+                                "$ref": "#/definitions/VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT"
                             },
                             "VkPhysicalDeviceShaderSMBuiltinsFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderSMBuiltinsFeaturesNV"
@@ -6051,6 +6108,9 @@
                             },
                             "VkPhysicalDeviceShaderIntegerDotProductPropertiesKHR": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderIntegerDotProductProperties"
+                            },
+                            "VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT": {
+                                "$ref": "#/definitions/VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT"
                             },
                             "VkPhysicalDeviceShaderSMBuiltinsPropertiesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderSMBuiltinsPropertiesNV"
