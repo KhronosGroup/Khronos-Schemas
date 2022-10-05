@@ -7823,7 +7823,7 @@
                             }
                         },
                         "optionals": {
-                            "description": "The list of optioanl capability sets that can be reference by a profile.",
+                            "description": "The list of optional capability sets that can be reference by a profile.",
                             "type": "array",
                             "uniqueItems": true,
                             "items": {
