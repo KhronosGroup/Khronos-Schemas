@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.209.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.3.209",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.208.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.3.208",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -7029,11 +7029,41 @@
                             }
                         },
                         "capabilities": {
-                            "description": "The list of capability sets that can be reference by a profile.",
+                            "description": "The list of required capability sets that can be reference by a profile.",
                             "type": "array",
                             "uniqueItems": true,
                             "items": {
-                                "type": "string"
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "uniqueItems": true,
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "optionals": {
+                            "description": "The list of optioanl capability sets that can be reference by a profile.",
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "uniqueItems": true,
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
                             }
                         },
                         "fallback": {
