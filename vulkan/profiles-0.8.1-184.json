@@ -6008,8 +6008,6 @@
                         "description",
                         "version",
                         "api-version",
-                        "contributors",
-                        "history",
                         "capabilities"
                     ],
                     "properties": {
@@ -6121,6 +6119,44 @@
                     }
                 }
             }
+        },
+        "contributors": {
+            "type": "object",
+            "description": "The list of contributors of the profile.",
+            "additionalProperties": {
+                "$ref": "#/definitions/contributor"
+            }
+        },
+        "history": {
+            "description": "The version history of the profile file",
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": [
+                    "revision",
+                    "date",
+                    "author",
+                    "comment"
+                ],
+                "properties": {
+                    "revision": {
+                        "type": "integer"
+                    },
+                    "date": {
+                        "type": "string",
+                        "pattern": "((?:19|20)\\d\\d)-(0?[1-9]|1[012])-([12][0-9]|3[01]|0?[1-9])"
+                    },
+                    "author": {
+                        "type": "string"
+                    },
+                    "comment": {
+                        "type": "string"
+                    }
+                }
+            }
         }
+
     }
 }
