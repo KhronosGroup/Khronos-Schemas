@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.1-231.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.3.231",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.1-232.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.3.232",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -3872,6 +3872,9 @@
             "properties": {
                 "shaderCoreCount": {
                     "$ref": "#/definitions/uint32_t"
+                },
+                "shaderCoreMask": {
+                    "$ref": "#/definitions/uint64_t"
                 },
                 "shaderWarpsPerCore": {
                     "$ref": "#/definitions/uint32_t"
