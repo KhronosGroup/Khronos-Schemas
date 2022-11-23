@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://schema.khronos.org/vulkan/devsim_VK_KHR_buffer_device_address_1.json#",
+    "title": "JSON schema for Vulkan device simulation layer configuration file",
+    "description": "Schema for VK_KHR_buffer_device_address data structures, as used to configure the device simulation layer.",
+    "type": "object",
+    "additionalProperties": true,
+
+    "definitions": {
+        "$schema": {"type": "string", "format": "uri"},
+        "uint32_t": {"type": "integer", "minimum": 0, "maximum": 4294967295},
+        "VkBool32": {"$ref": "#/definitions/uint32_t"},
+        "VkPhysicalDeviceBufferDeviceAddressFeaturesKHR": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "bufferDeviceAddress": {"$ref": "#/definitions/VkBool32"},
+                "bufferDeviceAddressCaptureReplay": {"$ref": "#/definitions/VkBool32"},
+                "bufferDeviceAddressMultiDevice": {"$ref": "#/definitions/VkBool32"}
+            }
+        }
+    },
+    
+    "required": ["$schema"],
+    "properties": {
+        "$schema": {"$ref": "#/definitions/$schema"},
+        "VkPhysicalDeviceBufferDeviceAddressFeaturesKHR": {"$ref": "#/definitions/VkPhysicalDeviceBufferDeviceAddressFeaturesKHR"},
+        "features": {"type": "null"},
+        "comments": {"type": "object"}
+    }
+}
