@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://schema.khronos.org/vulkan/devsim_VK_KHR_shader_float_controls_1.json#",
+    "title": "JSON schema for Vulkan device simulation layer configuration file",
+    "description": "Schema for VK_KHR_shader_float_controls data structures, as used to configure the device simulation layer.",
+    "type": "object",
+    "additionalProperties": true,
+
+    "definitions": {
+        "$schema": {"type": "string", "format": "uri"},
+        "uint32_t": {"type": "integer", "minimum": 0, "maximum": 4294967295},
+        "int32_t": {"type": "integer", "minimum": -2147483648, "maximum": 2147483647},
+        "enum": {"$ref": "#/definitions/int32_t"},
+        "VkBool32": {"$ref": "#/definitions/uint32_t"},
+        "VkShaderFloatControlsIndependenceKHR": {"$ref": "#/definitions/enum"},
+        "VkPhysicalDeviceFloatControlsPropertiesKHR": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "denormBehaviorIndependence": {"$ref": "#/definitions/VkShaderFloatControlsIndependenceKHR"},
+                "roundingModeIndependence": {"$ref": "#/definitions/VkShaderFloatControlsIndependenceKHR"},
+                "shaderSignedZeroInfNanPreserveFloat16": {"$ref": "#/definitions/VkBool32"},
+                "shaderSignedZeroInfNanPreserveFloat32": {"$ref": "#/definitions/VkBool32"},
+                "shaderSignedZeroInfNanPreserveFloat64": {"$ref": "#/definitions/VkBool32"},
+                "shaderDenormPreserveFloat16": {"$ref": "#/definitions/VkBool32"},
+                "shaderDenormPreserveFloat32": {"$ref": "#/definitions/VkBool32"},
+                "shaderDenormPreserveFloat64": {"$ref": "#/definitions/VkBool32"},
+                "shaderDenormFlushToZeroFloat16": {"$ref": "#/definitions/VkBool32"},
+                "shaderDenormFlushToZeroFloat32": {"$ref": "#/definitions/VkBool32"},
+                "shaderDenormFlushToZeroFloat64": {"$ref": "#/definitions/VkBool32"},
+                "shaderRoundingModeRTEFloat16": {"$ref": "#/definitions/VkBool32"},
+                "shaderRoundingModeRTEFloat32": {"$ref": "#/definitions/VkBool32"},
+                "shaderRoundingModeRTEFloat64": {"$ref": "#/definitions/VkBool32"},
+                "shaderRoundingModeRTZFloat16": {"$ref": "#/definitions/VkBool32"},
+                "shaderRoundingModeRTZFloat32": {"$ref": "#/definitions/VkBool32"},
+                "shaderRoundingModeRTZFloat64": {"$ref": "#/definitions/VkBool32"}
+            }
+        }
+    },
+    
+    "required": ["$schema"],
+    "properties": {
+        "$schema": {"$ref": "#/definitions/$schema"},
+        "VkPhysicalDeviceFloatControlsPropertiesKHR": {"$ref": "#/definitions/VkPhysicalDeviceFloatControlsPropertiesKHR"},
+        "properties": {"type": "null"},
+        "comments": {"type": "object"}
+    }
+}
