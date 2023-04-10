@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.1-246.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.3.246",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.1-245.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.3.245",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -1823,15 +1823,6 @@
                 }
             }
         },
-        "VkPhysicalDeviceShaderObjectFeaturesEXT": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "shaderObject": {
-                    "type": "boolean"
-                }
-            }
-        },
         "VkPhysicalDeviceShaderSMBuiltinsFeaturesNV": {
             "type": "object",
             "additionalProperties": false,
@@ -1864,21 +1855,6 @@
             "additionalProperties": false,
             "properties": {
                 "shaderTerminateInvocation": {
-                    "type": "boolean"
-                }
-            }
-        },
-        "VkPhysicalDeviceShaderTileImageFeaturesEXT": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "shaderTileImageColorReadAccess": {
-                    "type": "boolean"
-                },
-                "shaderTileImageDepthReadAccess": {
-                    "type": "boolean"
-                },
-                "shaderTileImageStencilReadAccess": {
                     "type": "boolean"
                 }
             }
@@ -4434,23 +4410,6 @@
                 }
             }
         },
-        "VkPhysicalDeviceShaderObjectPropertiesEXT": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "shaderBinaryUUID": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/uint8_t"
-                    },
-                    "uniqueItems": false,
-                    "maxItems": 16
-                },
-                "shaderBinaryVersion": {
-                    "$ref": "#/definitions/uint32_t"
-                }
-            }
-        },
         "VkPhysicalDeviceShaderSMBuiltinsPropertiesNV": {
             "type": "object",
             "additionalProperties": false,
@@ -4460,21 +4419,6 @@
                 },
                 "shaderWarpsPerSM": {
                     "$ref": "#/definitions/uint32_t"
-                }
-            }
-        },
-        "VkPhysicalDeviceShaderTileImagePropertiesEXT": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "shaderTileImageCoherentReadAccelerated": {
-                    "type": "boolean"
-                },
-                "shaderTileImageReadFromHelperInvocation": {
-                    "type": "boolean"
-                },
-                "shaderTileImageReadSampleFromPixelRateInvocation": {
-                    "type": "boolean"
                 }
             }
         },
@@ -5835,9 +5779,6 @@
                             "VK_EXT_shader_module_identifier": {
                                 "type": "integer"
                             },
-                            "VK_EXT_shader_object": {
-                                "type": "integer"
-                            },
                             "VK_EXT_shader_stencil_export": {
                                 "type": "integer"
                             },
@@ -5845,9 +5786,6 @@
                                 "type": "integer"
                             },
                             "VK_EXT_shader_subgroup_vote": {
-                                "type": "integer"
-                            },
-                            "VK_EXT_shader_tile_image": {
                                 "type": "integer"
                             },
                             "VK_EXT_shader_viewport_index_layer": {
@@ -6907,9 +6845,6 @@
                             "VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT"
                             },
-                            "VkPhysicalDeviceShaderObjectFeaturesEXT": {
-                                "$ref": "#/definitions/VkPhysicalDeviceShaderObjectFeaturesEXT"
-                            },
                             "VkPhysicalDeviceShaderSMBuiltinsFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderSMBuiltinsFeaturesNV"
                             },
@@ -6927,9 +6862,6 @@
                             },
                             "VkPhysicalDeviceShaderTerminateInvocationFeaturesKHR": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderTerminateInvocationFeatures"
-                            },
-                            "VkPhysicalDeviceShaderTileImageFeaturesEXT": {
-                                "$ref": "#/definitions/VkPhysicalDeviceShaderTileImageFeaturesEXT"
                             },
                             "VkPhysicalDeviceShadingRateImageFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShadingRateImageFeaturesNV"
@@ -7262,14 +7194,8 @@
                             "VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT"
                             },
-                            "VkPhysicalDeviceShaderObjectPropertiesEXT": {
-                                "$ref": "#/definitions/VkPhysicalDeviceShaderObjectPropertiesEXT"
-                            },
                             "VkPhysicalDeviceShaderSMBuiltinsPropertiesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderSMBuiltinsPropertiesNV"
-                            },
-                            "VkPhysicalDeviceShaderTileImagePropertiesEXT": {
-                                "$ref": "#/definitions/VkPhysicalDeviceShaderTileImagePropertiesEXT"
                             },
                             "VkPhysicalDeviceShadingRateImagePropertiesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShadingRateImagePropertiesNV"
