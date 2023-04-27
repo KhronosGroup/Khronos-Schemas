@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.1-249.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.3.249",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.1-248.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.3.248",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -1564,15 +1564,6 @@
                     "type": "boolean"
                 },
                 "rayTraversalPrimitiveCulling": {
-                    "type": "boolean"
-                }
-            }
-        },
-        "VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "rayTracingPositionFetch": {
                     "type": "boolean"
                 }
             }
@@ -6147,9 +6138,6 @@
                             "VK_KHR_ray_tracing_pipeline": {
                                 "type": "integer"
                             },
-                            "VK_KHR_ray_tracing_position_fetch": {
-                                "type": "integer"
-                            },
                             "VK_KHR_relaxed_block_layout": {
                                 "type": "integer"
                             },
@@ -6834,9 +6822,6 @@
                             },
                             "VkPhysicalDeviceRayTracingPipelineFeaturesKHR": {
                                 "$ref": "#/definitions/VkPhysicalDeviceRayTracingPipelineFeaturesKHR"
-                            },
-                            "VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR": {
-                                "$ref": "#/definitions/VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR"
                             },
                             "VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV"
