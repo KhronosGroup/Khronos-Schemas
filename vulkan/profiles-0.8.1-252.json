@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.1-255.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.3.255",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.1-252.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.3.252",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -473,18 +473,6 @@
                 }
             }
         },
-        "VkPhysicalDeviceCooperativeMatrixFeaturesKHR": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "cooperativeMatrix": {
-                    "type": "boolean"
-                },
-                "cooperativeMatrixRobustBufferAccess": {
-                    "type": "boolean"
-                }
-            }
-        },
         "VkPhysicalDeviceCooperativeMatrixFeaturesNV": {
             "type": "object",
             "additionalProperties": false,
@@ -541,24 +529,6 @@
             "additionalProperties": false,
             "properties": {
                 "dedicatedAllocationImageAliasing": {
-                    "type": "boolean"
-                }
-            }
-        },
-        "VkPhysicalDeviceDepthBiasControlFeaturesEXT": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "depthBiasControl": {
-                    "type": "boolean"
-                },
-                "depthBiasExact": {
-                    "type": "boolean"
-                },
-                "floatRepresentation": {
-                    "type": "boolean"
-                },
-                "leastRepresentableValueForceUnormRepresentation": {
                     "type": "boolean"
                 }
             }
@@ -874,15 +844,6 @@
             "additionalProperties": false,
             "properties": {
                 "externalMemoryRDMA": {
-                    "type": "boolean"
-                }
-            }
-        },
-        "VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "screenBufferImport": {
                     "type": "boolean"
                 }
             }
@@ -3000,15 +2961,6 @@
                 "$ref": "#/definitions/VkShaderStageFlagBits"
             },
             "uniqueItems": true
-        },
-        "VkPhysicalDeviceCooperativeMatrixPropertiesKHR": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "cooperativeMatrixSupportedStages": {
-                    "$ref": "#/definitions/VkShaderStageFlags"
-                }
-            }
         },
         "VkPhysicalDeviceCooperativeMatrixPropertiesNV": {
             "type": "object",
@@ -5676,9 +5628,6 @@
                             "VK_EXT_debug_utils": {
                                 "type": "integer"
                             },
-                            "VK_EXT_depth_bias_control": {
-                                "type": "integer"
-                            },
                             "VK_EXT_depth_clamp_zero_one": {
                                 "type": "integer"
                             },
@@ -6064,9 +6013,6 @@
                                 "type": "integer"
                             },
                             "VK_KHR_buffer_device_address": {
-                                "type": "integer"
-                            },
-                            "VK_KHR_cooperative_matrix": {
                                 "type": "integer"
                             },
                             "VK_KHR_copy_commands2": {
@@ -6525,9 +6471,6 @@
                             "VK_QCOM_tile_properties": {
                                 "type": "integer"
                             },
-                            "VK_QNX_external_memory_screen_buffer": {
-                                "type": "integer"
-                            },
                             "VK_QNX_screen_surface": {
                                 "type": "integer"
                             },
@@ -6622,9 +6565,6 @@
                             "VkPhysicalDeviceConditionalRenderingFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceConditionalRenderingFeaturesEXT"
                             },
-                            "VkPhysicalDeviceCooperativeMatrixFeaturesKHR": {
-                                "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrixFeaturesKHR"
-                            },
                             "VkPhysicalDeviceCooperativeMatrixFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrixFeaturesNV"
                             },
@@ -6642,9 +6582,6 @@
                             },
                             "VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV"
-                            },
-                            "VkPhysicalDeviceDepthBiasControlFeaturesEXT": {
-                                "$ref": "#/definitions/VkPhysicalDeviceDepthBiasControlFeaturesEXT"
                             },
                             "VkPhysicalDeviceDepthClampZeroOneFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceDepthClampZeroOneFeaturesEXT"
@@ -6702,9 +6639,6 @@
                             },
                             "VkPhysicalDeviceExternalMemoryRDMAFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceExternalMemoryRDMAFeaturesNV"
-                            },
-                            "VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX": {
-                                "$ref": "#/definitions/VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX"
                             },
                             "VkPhysicalDeviceFaultFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceFaultFeaturesEXT"
@@ -7171,9 +7105,6 @@
                             },
                             "VkPhysicalDeviceConservativeRasterizationPropertiesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceConservativeRasterizationPropertiesEXT"
-                            },
-                            "VkPhysicalDeviceCooperativeMatrixPropertiesKHR": {
-                                "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrixPropertiesKHR"
                             },
                             "VkPhysicalDeviceCooperativeMatrixPropertiesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrixPropertiesNV"
