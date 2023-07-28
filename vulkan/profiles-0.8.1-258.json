@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.1-259.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.3.259",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.1-258.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.3.258",
     "additionalProperties": true,
     "required": [
         "capabilities",
