@@ -8981,8 +8981,6 @@
                                 }
                             }
                         },
-                            }
-                        },
                         "profiles": {
                             "description": "The list of required profiles by the profile.",
                             "type": "array",
@@ -8990,6 +8988,8 @@
                             "uniqueItems": true,
                             "items": {
                                 "type": "string"
+                            }
+                        },
                         "capabilities": {
                             "description": "The list of required capability sets that can be referenced by a profile.",
                             "type": "array",
