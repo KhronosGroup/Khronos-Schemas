@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-276.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.3.276",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-277.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.3.277",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -5096,6 +5096,8 @@
                 "VK_SUBGROUP_FEATURE_CLUSTERED_BIT",
                 "VK_SUBGROUP_FEATURE_PARTITIONED_BIT_NV",
                 "VK_SUBGROUP_FEATURE_QUAD_BIT",
+                "VK_SUBGROUP_FEATURE_ROTATE_BIT_KHR",
+                "VK_SUBGROUP_FEATURE_ROTATE_CLUSTERED_BIT_KHR",
                 "VK_SUBGROUP_FEATURE_SHUFFLE_BIT",
                 "VK_SUBGROUP_FEATURE_SHUFFLE_RELATIVE_BIT",
                 "VK_SUBGROUP_FEATURE_VOTE_BIT"
@@ -6044,6 +6046,7 @@
         },
         "VkVideoCodecOperationFlagBitsKHR": {
             "enum": [
+                "VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR",
                 "VK_VIDEO_CODEC_OPERATION_DECODE_H264_BIT_KHR",
                 "VK_VIDEO_CODEC_OPERATION_DECODE_H265_BIT_KHR",
                 "VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_KHR",
@@ -6898,6 +6901,9 @@
                                 "type": "integer"
                             },
                             "VK_KHR_vertex_attribute_divisor": {
+                                "type": "integer"
+                            },
+                            "VK_KHR_video_decode_av1": {
                                 "type": "integer"
                             },
                             "VK_KHR_video_decode_h264": {
