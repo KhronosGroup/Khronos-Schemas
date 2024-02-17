@@ -6039,10 +6039,34 @@
                 }
             }
         },
+        "VkQueueGlobalPriorityKHR": {
+            "enum": [
+                "VK_QUEUE_GLOBAL_PRIORITY_HIGH_EXT",
+                "VK_QUEUE_GLOBAL_PRIORITY_HIGH_KHR",
+                "VK_QUEUE_GLOBAL_PRIORITY_LOW_EXT",
+                "VK_QUEUE_GLOBAL_PRIORITY_LOW_KHR",
+                "VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_EXT",
+                "VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_KHR",
+                "VK_QUEUE_GLOBAL_PRIORITY_REALTIME_EXT",
+                "VK_QUEUE_GLOBAL_PRIORITY_REALTIME_KHR"
+            ]
+        },
         "VkQueueFamilyGlobalPriorityPropertiesKHR": {
             "type": "object",
             "additionalProperties": false,
-            "properties": {}
+            "properties": {
+                "priorities": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/VkQueueGlobalPriorityKHR"
+                    },
+                    "uniqueItems": false,
+                    "maxItems": 16
+                },
+                "priorityCount": {
+                    "$ref": "#/definitions/uint32_t"
+                }
+            }
         },
         "VkQueueFamilyQueryResultStatusPropertiesKHR": {
             "type": "object",
