@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-341.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.4.341",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-342.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.4.342",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -532,6 +532,15 @@
                     "type": "boolean"
                 },
                 "cooperativeMatrixWorkgroupScope": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceCooperativeMatrixConversionFeaturesQCOM": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "cooperativeMatrixConversion": {
                     "type": "boolean"
                 }
             }
@@ -10409,6 +10418,9 @@
                             "VK_OHOS_surface": {
                                 "type": "integer"
                             },
+                            "VK_QCOM_cooperative_matrix_conversion": {
+                                "type": "integer"
+                            },
                             "VK_QCOM_data_graph_model": {
                                 "type": "integer"
                             },
@@ -10580,6 +10592,9 @@
                             },
                             "VkPhysicalDeviceCooperativeMatrix2FeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrix2FeaturesNV"
+                            },
+                            "VkPhysicalDeviceCooperativeMatrixConversionFeaturesQCOM": {
+                                "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrixConversionFeaturesQCOM"
                             },
                             "VkPhysicalDeviceCooperativeMatrixFeaturesKHR": {
                                 "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrixFeaturesKHR"
