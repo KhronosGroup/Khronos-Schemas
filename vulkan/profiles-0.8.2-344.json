@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-343.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.4.343",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-344.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.4.344",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -2596,6 +2596,24 @@
             "additionalProperties": false,
             "properties": {
                 "shaderMaximalReconvergence": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "shaderMixedFloatDotProductBFloat16Acc": {
+                    "type": "boolean"
+                },
+                "shaderMixedFloatDotProductFloat16AccFloat16": {
+                    "type": "boolean"
+                },
+                "shaderMixedFloatDotProductFloat16AccFloat32": {
+                    "type": "boolean"
+                },
+                "shaderMixedFloatDotProductFloat8AccFloat32": {
                     "type": "boolean"
                 }
             }
@@ -10496,6 +10514,9 @@
                             "VK_VALVE_mutable_descriptor_type": {
                                 "type": "integer"
                             },
+                            "VK_VALVE_shader_mixed_float_dot_product": {
+                                "type": "integer"
+                            },
                             "VK_VALVE_video_encode_rgb_conversion": {
                                 "type": "integer"
                             }
@@ -11243,6 +11264,9 @@
                             },
                             "VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR"
+                            },
+                            "VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE": {
+                                "$ref": "#/definitions/VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE"
                             },
                             "VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT"
