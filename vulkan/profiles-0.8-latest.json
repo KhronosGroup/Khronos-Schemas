@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-348.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.4.348",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-349.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.4.349",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -694,6 +694,15 @@
             "additionalProperties": false,
             "properties": {
                 "dataGraphModel": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "dataGraphOpticalFlow": {
                     "type": "boolean"
                 }
             }
@@ -7346,6 +7355,9 @@
                 "VK_FORMAT_FEATURE_2_COPY_IMAGE_INDIRECT_DST_BIT_KHR",
                 "VK_FORMAT_FEATURE_2_COSITED_CHROMA_SAMPLES_BIT",
                 "VK_FORMAT_FEATURE_2_COSITED_CHROMA_SAMPLES_BIT_KHR",
+                "VK_FORMAT_FEATURE_2_DATA_GRAPH_OPTICAL_FLOW_COST_BIT_ARM",
+                "VK_FORMAT_FEATURE_2_DATA_GRAPH_OPTICAL_FLOW_IMAGE_BIT_ARM",
+                "VK_FORMAT_FEATURE_2_DATA_GRAPH_OPTICAL_FLOW_VECTOR_BIT_ARM",
                 "VK_FORMAT_FEATURE_2_DEPTH_COPY_ON_COMPUTE_QUEUE_BIT_KHR",
                 "VK_FORMAT_FEATURE_2_DEPTH_COPY_ON_TRANSFER_QUEUE_BIT_KHR",
                 "VK_FORMAT_FEATURE_2_DEPTH_STENCIL_ATTACHMENT_BIT",
@@ -9396,6 +9408,9 @@
                             "VK_ARM_data_graph_instruction_set_tosa": {
                                 "type": "integer"
                             },
+                            "VK_ARM_data_graph_optical_flow": {
+                                "type": "integer"
+                            },
                             "VK_ARM_format_pack": {
                                 "type": "integer"
                             },
@@ -10815,6 +10830,9 @@
                             },
                             "VkPhysicalDeviceDataGraphModelFeaturesQCOM": {
                                 "$ref": "#/definitions/VkPhysicalDeviceDataGraphModelFeaturesQCOM"
+                            },
+                            "VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM": {
+                                "$ref": "#/definitions/VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM"
                             },
                             "VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV"
