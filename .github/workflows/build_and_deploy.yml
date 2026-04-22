@@ -3,22 +3,31 @@ name: Schema CD
 on:
   push:
     branches: [ main ]
+  pull_request:
   workflow_dispatch:
-  
+
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_DEFAULT_REGION: 'us-east-1'
 
 jobs:
-  build:
+  reuse:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby v2.6
+    - uses: actions/checkout@v4
+    - name: REUSE Compliance Check
+      uses: fsfe/reuse-action@v5
+
+  build:
+    needs: reuse
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Ruby
       uses: ruby/setup-ruby@v1
-      with: 
-        ruby-version: '2.6'
+      with:
+        ruby-version: '3.3'
         bundler-cache: true
     - name: "Build Site"
       run: bundle exec jekyll build
