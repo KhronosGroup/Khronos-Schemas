@@ -1,0 +1,10 @@
+version = 1
+SPDX-PackageName = "Khronos Schemas"
+SPDX-PackageSupplier = "The Khronos Group, Inc"
+SPDX-PackageDownloadLocation = "https://github.com/KhronosGroup/Khronos-Schemas"
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 The Khronos Group, Inc."
+SPDX-License-Identifier = "Apache-2.0"
