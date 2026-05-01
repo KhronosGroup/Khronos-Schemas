@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-349.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.4.349",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-350.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.4.350",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -694,6 +694,15 @@
             "additionalProperties": false,
             "properties": {
                 "dataGraphModel": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "dataGraphNeuralAcceleratorStatistics": {
                     "type": "boolean"
                 }
             }
@@ -1561,6 +1570,15 @@
             "additionalProperties": false,
             "properties": {
                 "maintenance10": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceMaintenance11FeaturesKHR": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "maintenance11": {
                     "type": "boolean"
                 }
             }
@@ -2941,6 +2959,15 @@
             "additionalProperties": false,
             "properties": {
                 "textureCompressionASTC_HDR": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceThrottleHintFeaturesSEC": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "throttleHint": {
                     "type": "boolean"
                 }
             }
@@ -7726,6 +7753,15 @@
                 }
             }
         },
+        "VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "optimalImageTransferGranularity": {
+                    "$ref": "#/definitions/VkExtent3D"
+                }
+            }
+        },
         "VkQueueFamilyOwnershipTransferPropertiesKHR": {
             "type": "object",
             "additionalProperties": false,
@@ -9210,6 +9246,7 @@
                 "VK_IMAGE_CREATE_2D_VIEW_COMPATIBLE_BIT_EXT",
                 "VK_IMAGE_CREATE_ALIAS_BIT",
                 "VK_IMAGE_CREATE_ALIAS_BIT_KHR",
+                "VK_IMAGE_CREATE_ALIAS_SINGLE_LAYER_DESCRIPTOR_BIT_KHR",
                 "VK_IMAGE_CREATE_BLOCK_TEXEL_VIEW_COMPATIBLE_BIT",
                 "VK_IMAGE_CREATE_BLOCK_TEXEL_VIEW_COMPATIBLE_BIT_KHR",
                 "VK_IMAGE_CREATE_CORNER_SAMPLED_BIT_NV",
@@ -9406,6 +9443,9 @@
                                 "type": "integer"
                             },
                             "VK_ARM_data_graph_instruction_set_tosa": {
+                                "type": "integer"
+                            },
+                            "VK_ARM_data_graph_neural_accelerator_statistics": {
                                 "type": "integer"
                             },
                             "VK_ARM_data_graph_optical_flow": {
@@ -10110,6 +10150,9 @@
                             "VK_KHR_maintenance10": {
                                 "type": "integer"
                             },
+                            "VK_KHR_maintenance11": {
+                                "type": "integer"
+                            },
                             "VK_KHR_maintenance2": {
                                 "type": "integer"
                             },
@@ -10668,6 +10711,9 @@
                             "VK_SEC_pipeline_cache_incremental_mode": {
                                 "type": "integer"
                             },
+                            "VK_SEC_throttle_hint": {
+                                "type": "integer"
+                            },
                             "VK_SEC_ubm_surface": {
                                 "type": "integer"
                             },
@@ -10830,6 +10876,9 @@
                             },
                             "VkPhysicalDeviceDataGraphModelFeaturesQCOM": {
                                 "$ref": "#/definitions/VkPhysicalDeviceDataGraphModelFeaturesQCOM"
+                            },
+                            "VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM": {
+                                "$ref": "#/definitions/VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM"
                             },
                             "VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM": {
                                 "$ref": "#/definitions/VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM"
@@ -11088,6 +11137,9 @@
                             },
                             "VkPhysicalDeviceMaintenance10FeaturesKHR": {
                                 "$ref": "#/definitions/VkPhysicalDeviceMaintenance10FeaturesKHR"
+                            },
+                            "VkPhysicalDeviceMaintenance11FeaturesKHR": {
+                                "$ref": "#/definitions/VkPhysicalDeviceMaintenance11FeaturesKHR"
                             },
                             "VkPhysicalDeviceMaintenance4Features": {
                                 "$ref": "#/definitions/VkPhysicalDeviceMaintenance4Features"
@@ -11550,6 +11602,9 @@
                             },
                             "VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceTextureCompressionASTCHDRFeatures"
+                            },
+                            "VkPhysicalDeviceThrottleHintFeaturesSEC": {
+                                "$ref": "#/definitions/VkPhysicalDeviceThrottleHintFeaturesSEC"
                             },
                             "VkPhysicalDeviceTileMemoryHeapFeaturesQCOM": {
                                 "$ref": "#/definitions/VkPhysicalDeviceTileMemoryHeapFeaturesQCOM"
@@ -13226,6 +13281,9 @@
                                 },
                                 "VkQueueFamilyGlobalPriorityPropertiesEXT": {
                                     "$ref": "#/definitions/VkQueueFamilyGlobalPriorityProperties"
+                                },
+                                "VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR": {
+                                    "$ref": "#/definitions/VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR"
                                 },
                                 "VkQueueFamilyOwnershipTransferPropertiesKHR": {
                                     "$ref": "#/definitions/VkQueueFamilyOwnershipTransferPropertiesKHR"
