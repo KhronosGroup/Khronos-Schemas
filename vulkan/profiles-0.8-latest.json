@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-351.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.4.351",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-352.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.4.352",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -541,6 +541,15 @@
             "additionalProperties": false,
             "properties": {
                 "cooperativeMatrixConversion": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "cooperativeMatrixDecodeVector": {
                     "type": "boolean"
                 }
             }
@@ -4855,6 +4864,7 @@
                 "VK_DRIVER_ID_INTEL_PROPRIETARY_WINDOWS_KHR",
                 "VK_DRIVER_ID_JUICE_PROPRIETARY",
                 "VK_DRIVER_ID_MESA_DOZEN",
+                "VK_DRIVER_ID_MESA_GFXSTREAM",
                 "VK_DRIVER_ID_MESA_HONEYKRISP",
                 "VK_DRIVER_ID_MESA_KOSMICKRISP",
                 "VK_DRIVER_ID_MESA_LLVMPIPE",
@@ -10619,6 +10629,9 @@
                             "VK_NV_cooperative_matrix2": {
                                 "type": "integer"
                             },
+                            "VK_NV_cooperative_matrix_decode_vector": {
+                                "type": "integer"
+                            },
                             "VK_NV_cooperative_vector": {
                                 "type": "integer"
                             },
@@ -10991,6 +11004,9 @@
                             },
                             "VkPhysicalDeviceCooperativeMatrixConversionFeaturesQCOM": {
                                 "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrixConversionFeaturesQCOM"
+                            },
+                            "VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV": {
+                                "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV"
                             },
                             "VkPhysicalDeviceCooperativeMatrixFeaturesKHR": {
                                 "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrixFeaturesKHR"
