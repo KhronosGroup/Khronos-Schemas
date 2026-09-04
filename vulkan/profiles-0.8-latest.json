@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-361.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.4.361",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-362.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.4.362",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -394,6 +394,15 @@
                     "type": "boolean"
                 },
                 "borderColorSwizzleFromImage": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentFeaturesVALVE": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "bufferDeviceAddressAllocationAlignment": {
                     "type": "boolean"
                 }
             }
@@ -2006,7 +2015,7 @@
                 }
             }
         },
-        "VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT": {
+        "VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesKHR": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -4235,6 +4244,15 @@
                 },
                 "advancedBlendNonPremultipliedSrcColor": {
                     "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "maxBufferDeviceAddressAllocationAlignment": {
+                    "$ref": "#/definitions/uint32_t"
                 }
             }
         },
@@ -10856,6 +10874,9 @@
                             "VK_KHR_pipeline_library": {
                                 "type": "integer"
                             },
+                            "VK_KHR_pipeline_library_group_handles": {
+                                "type": "integer"
+                            },
                             "VK_KHR_portability_enumeration": {
                                 "type": "integer"
                             },
@@ -11396,6 +11417,9 @@
                             "VK_SEC_ubm_surface": {
                                 "type": "integer"
                             },
+                            "VK_VALVE_buffer_device_address_allocation_alignment": {
+                                "type": "integer"
+                            },
                             "VK_VALVE_descriptor_set_host_mapping": {
                                 "type": "integer"
                             },
@@ -11468,6 +11492,9 @@
                             },
                             "VkPhysicalDeviceBorderColorSwizzleFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceBorderColorSwizzleFeaturesEXT"
+                            },
+                            "VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentFeaturesVALVE": {
+                                "$ref": "#/definitions/VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentFeaturesVALVE"
                             },
                             "VkPhysicalDeviceBufferDeviceAddressFeatures": {
                                 "$ref": "#/definitions/VkPhysicalDeviceBufferDeviceAddressFeatures"
@@ -11958,8 +11985,11 @@
                             "VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR": {
                                 "$ref": "#/definitions/VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR"
                             },
+                            "VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesKHR": {
+                                "$ref": "#/definitions/VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesKHR"
+                            },
                             "VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT": {
-                                "$ref": "#/definitions/VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT"
+                                "$ref": "#/definitions/VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesKHR"
                             },
                             "VkPhysicalDevicePipelineOpacityMicromapFeaturesARM": {
                                 "$ref": "#/definitions/VkPhysicalDevicePipelineOpacityMicromapFeaturesARM"
@@ -12462,6 +12492,9 @@
                             },
                             "VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT"
+                            },
+                            "VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE": {
+                                "$ref": "#/definitions/VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE"
                             },
                             "VkPhysicalDeviceClusterAccelerationStructurePropertiesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceClusterAccelerationStructurePropertiesNV"
