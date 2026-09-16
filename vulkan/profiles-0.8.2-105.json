@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-106.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.1.106",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-105.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.1.105",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -308,7 +308,7 @@
                 }
             }
         },
-        "VkPhysicalDeviceBufferDeviceAddressFeaturesEXT": {
+        "VkPhysicalDeviceBufferAddressFeaturesEXT": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -602,7 +602,7 @@
                 }
             }
         },
-        "VkPhysicalDeviceShaderDrawParametersFeatures": {
+        "VkPhysicalDeviceShaderDrawParameterFeatures": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -644,7 +644,7 @@
                 }
             }
         },
-        "VkPhysicalDeviceVariablePointersFeatures": {
+        "VkPhysicalDeviceVariablePointerFeatures": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -2643,11 +2643,8 @@
                             "VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT"
                             },
-                            "VkPhysicalDeviceBufferDeviceAddressFeaturesEXT": {
-                                "$ref": "#/definitions/VkPhysicalDeviceBufferDeviceAddressFeaturesEXT"
-                            },
                             "VkPhysicalDeviceBufferAddressFeaturesEXT": {
-                                "$ref": "#/definitions/VkPhysicalDeviceBufferDeviceAddressFeaturesEXT"
+                                "$ref": "#/definitions/VkPhysicalDeviceBufferAddressFeaturesEXT"
                             },
                             "VkPhysicalDeviceComputeShaderDerivativesFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceComputeShaderDerivativesFeaturesNV"
@@ -2718,11 +2715,8 @@
                             "VkPhysicalDeviceShaderAtomicInt64FeaturesKHR": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderAtomicInt64FeaturesKHR"
                             },
-                            "VkPhysicalDeviceShaderDrawParametersFeatures": {
-                                "$ref": "#/definitions/VkPhysicalDeviceShaderDrawParametersFeatures"
-                            },
                             "VkPhysicalDeviceShaderDrawParameterFeatures": {
-                                "$ref": "#/definitions/VkPhysicalDeviceShaderDrawParametersFeatures"
+                                "$ref": "#/definitions/VkPhysicalDeviceShaderDrawParameterFeatures"
                             },
                             "VkPhysicalDeviceShaderImageFootprintFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceShaderImageFootprintFeaturesNV"
@@ -2733,17 +2727,11 @@
                             "VkPhysicalDeviceTransformFeedbackFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceTransformFeedbackFeaturesEXT"
                             },
-                            "VkPhysicalDeviceVariablePointersFeatures": {
-                                "$ref": "#/definitions/VkPhysicalDeviceVariablePointersFeatures"
-                            },
-                            "VkPhysicalDeviceVariablePointersFeaturesKHR": {
-                                "$ref": "#/definitions/VkPhysicalDeviceVariablePointersFeatures"
+                            "VkPhysicalDeviceVariablePointerFeatures": {
+                                "$ref": "#/definitions/VkPhysicalDeviceVariablePointerFeatures"
                             },
                             "VkPhysicalDeviceVariablePointerFeaturesKHR": {
-                                "$ref": "#/definitions/VkPhysicalDeviceVariablePointersFeatures"
-                            },
-                            "VkPhysicalDeviceVariablePointerFeatures": {
-                                "$ref": "#/definitions/VkPhysicalDeviceVariablePointersFeatures"
+                                "$ref": "#/definitions/VkPhysicalDeviceVariablePointerFeatures"
                             },
                             "VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT"
@@ -3757,17 +3745,27 @@
                                 }
                             }
                         },
-                        "profiles": {
-                            "description": "The list of required profiles by the profile.",
+                        "capabilities": {
+                            "description": "The list of required capability sets that can be reference by a profile.",
                             "type": "array",
-                            "additionalProperties": false,
                             "uniqueItems": true,
                             "items": {
-                                "type": "string"
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "uniqueItems": true,
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
                             }
                         },
-                        "capabilities": {
-                            "description": "The list of required capability sets that can be referenced by a profile.",
+                        "optionals": {
+                            "description": "The list of optioanl capability sets that can be reference by a profile.",
                             "type": "array",
                             "uniqueItems": true,
                             "items": {
@@ -3794,23 +3792,13 @@
                                 "type": "string"
                             }
                         },
-                        "optionals": {
-                            "description": "The list of optional capability sets that can be referenced by a profile.",
+                        "profiles": {
+                            "description": "The list of required profiles by the profile.",
                             "type": "array",
+                            "additionalProperties": false,
                             "uniqueItems": true,
                             "items": {
-                                "anyOf": [
-                                    {
-                                        "type": "string"
-                                    },
-                                    {
-                                        "type": "array",
-                                        "uniqueItems": true,
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    }
-                                ]
+                                "type": "string"
                             }
                         }
                     }
