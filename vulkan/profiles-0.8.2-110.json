@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-106.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.1.106",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-110.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.1.110",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -368,6 +368,15 @@
                 }
             }
         },
+        "VkPhysicalDeviceCoverageReductionModeFeaturesNV": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "coverageReductionMode": {
+                    "type": "boolean"
+                }
+            }
+        },
         "VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV": {
             "type": "object",
             "additionalProperties": false,
@@ -640,6 +649,15 @@
                     "type": "boolean"
                 },
                 "transformFeedback": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHR": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "uniformBufferStandardLayout": {
                     "type": "boolean"
                 }
             }
@@ -2243,6 +2261,9 @@
                             "VK_EXT_hdr_metadata": {
                                 "type": "integer"
                             },
+                            "VK_EXT_headless_surface": {
+                                "type": "integer"
+                            },
                             "VK_EXT_host_query_reset": {
                                 "type": "integer"
                             },
@@ -2492,6 +2513,9 @@
                             "VK_KHR_swapchain_mutable_format": {
                                 "type": "integer"
                             },
+                            "VK_KHR_uniform_buffer_standard_layout": {
+                                "type": "integer"
+                            },
                             "VK_KHR_variable_pointers": {
                                 "type": "integer"
                             },
@@ -2541,6 +2565,9 @@
                                 "type": "integer"
                             },
                             "VK_NV_corner_sampled_image": {
+                                "type": "integer"
+                            },
+                            "VK_NV_coverage_reduction_mode": {
                                 "type": "integer"
                             },
                             "VK_NV_dedicated_allocation": {
@@ -2661,6 +2688,9 @@
                             "VkPhysicalDeviceCornerSampledImageFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceCornerSampledImageFeaturesNV"
                             },
+                            "VkPhysicalDeviceCoverageReductionModeFeaturesNV": {
+                                "$ref": "#/definitions/VkPhysicalDeviceCoverageReductionModeFeaturesNV"
+                            },
                             "VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV"
                             },
@@ -2732,6 +2762,9 @@
                             },
                             "VkPhysicalDeviceTransformFeedbackFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceTransformFeedbackFeaturesEXT"
+                            },
+                            "VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHR": {
+                                "$ref": "#/definitions/VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHR"
                             },
                             "VkPhysicalDeviceVariablePointersFeatures": {
                                 "$ref": "#/definitions/VkPhysicalDeviceVariablePointersFeatures"
@@ -3757,17 +3790,27 @@
                                 }
                             }
                         },
-                        "profiles": {
-                            "description": "The list of required profiles by the profile.",
+                        "capabilities": {
+                            "description": "The list of required capability sets that can be reference by a profile.",
                             "type": "array",
-                            "additionalProperties": false,
                             "uniqueItems": true,
                             "items": {
-                                "type": "string"
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "uniqueItems": true,
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
                             }
                         },
-                        "capabilities": {
-                            "description": "The list of required capability sets that can be referenced by a profile.",
+                        "optionals": {
+                            "description": "The list of optioanl capability sets that can be reference by a profile.",
                             "type": "array",
                             "uniqueItems": true,
                             "items": {
@@ -3794,23 +3837,13 @@
                                 "type": "string"
                             }
                         },
-                        "optionals": {
-                            "description": "The list of optional capability sets that can be referenced by a profile.",
+                        "profiles": {
+                            "description": "The list of required profiles by the profile.",
                             "type": "array",
+                            "additionalProperties": false,
                             "uniqueItems": true,
                             "items": {
-                                "anyOf": [
-                                    {
-                                        "type": "string"
-                                    },
-                                    {
-                                        "type": "array",
-                                        "uniqueItems": true,
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    }
-                                ]
+                                "type": "string"
                             }
                         }
                     }
