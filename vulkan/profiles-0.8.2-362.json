@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-363.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.4.363",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-362.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.4.362",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -5707,21 +5707,6 @@
                 }
             }
         },
-        "VkPhysicalDeviceInfoPropertiesINTEL": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "deviceIpVersionArch": {
-                    "$ref": "#/definitions/uint32_t"
-                },
-                "deviceIpVersionRelease": {
-                    "$ref": "#/definitions/uint32_t"
-                },
-                "deviceIpVersionRevision": {
-                    "$ref": "#/definitions/uint32_t"
-                }
-            }
-        },
         "VkPhysicalDeviceInlineUniformBlockProperties": {
             "type": "object",
             "additionalProperties": false,
@@ -10664,9 +10649,6 @@
                             "VK_IMG_relaxed_line_rasterization": {
                                 "type": "integer"
                             },
-                            "VK_INTEL_device_info": {
-                                "type": "integer"
-                            },
                             "VK_INTEL_performance_query": {
                                 "type": "integer"
                             },
@@ -12675,9 +12657,6 @@
                             },
                             "VkPhysicalDeviceImageProcessingPropertiesQCOM": {
                                 "$ref": "#/definitions/VkPhysicalDeviceImageProcessingPropertiesQCOM"
-                            },
-                            "VkPhysicalDeviceInfoPropertiesINTEL": {
-                                "$ref": "#/definitions/VkPhysicalDeviceInfoPropertiesINTEL"
                             },
                             "VkPhysicalDeviceInlineUniformBlockProperties": {
                                 "$ref": "#/definitions/VkPhysicalDeviceInlineUniformBlockProperties"
