@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-364.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.4.364",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-365.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.4.365",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -583,6 +583,15 @@
                     "type": "boolean"
                 },
                 "cooperativeMatrixRobustBufferAccess": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceCooperativeMatrixLayoutsFeaturesARM": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "cooperativeMatrixArmLayouts": {
                     "type": "boolean"
                 }
             }
@@ -10106,6 +10115,9 @@
                             "VK_ANDROID_external_memory_android_hardware_buffer": {
                                 "type": "integer"
                             },
+                            "VK_ARM_cooperative_matrix_layouts": {
+                                "type": "integer"
+                            },
                             "VK_ARM_data_graph": {
                                 "type": "integer"
                             },
@@ -11567,6 +11579,9 @@
                             },
                             "VkPhysicalDeviceCooperativeMatrixFeaturesNV": {
                                 "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrixFeaturesNV"
+                            },
+                            "VkPhysicalDeviceCooperativeMatrixLayoutsFeaturesARM": {
+                                "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrixLayoutsFeaturesARM"
                             },
                             "VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT"
