@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-365.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.4.365",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-366.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.4.366",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -1420,6 +1420,15 @@
             "additionalProperties": false,
             "properties": {
                 "graphicsPipelineLibrary": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceHdrSmpteSt209450FeaturesGOOGLE": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "hdrSmpteSt209450": {
                     "type": "boolean"
                 }
             }
@@ -4957,6 +4966,7 @@
                 "VK_DRIVER_ID_AMD_OPEN_SOURCE_KHR",
                 "VK_DRIVER_ID_AMD_PROPRIETARY",
                 "VK_DRIVER_ID_AMD_PROPRIETARY_KHR",
+                "VK_DRIVER_ID_APEX",
                 "VK_DRIVER_ID_APE_SOFT",
                 "VK_DRIVER_ID_ARM_PROPRIETARY",
                 "VK_DRIVER_ID_ARM_PROPRIETARY_KHR",
@@ -4988,6 +4998,8 @@
                 "VK_DRIVER_ID_MESA_V3DV",
                 "VK_DRIVER_ID_MESA_VENUS",
                 "VK_DRIVER_ID_MOLTENVK",
+                "VK_DRIVER_ID_MOMOTEN",
+                "VK_DRIVER_ID_NIKKI",
                 "VK_DRIVER_ID_NVIDIA_PROPRIETARY",
                 "VK_DRIVER_ID_NVIDIA_PROPRIETARY_KHR",
                 "VK_DRIVER_ID_QUALCOMM_PROPRIETARY",
@@ -10643,6 +10655,9 @@
                             "VK_GOOGLE_display_timing": {
                                 "type": "integer"
                             },
+                            "VK_GOOGLE_hdr_smpte_st_209450_metadata": {
+                                "type": "integer"
+                            },
                             "VK_GOOGLE_hlsl_functionality1": {
                                 "type": "integer"
                             },
@@ -11795,6 +11810,9 @@
                             },
                             "VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT": {
                                 "$ref": "#/definitions/VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT"
+                            },
+                            "VkPhysicalDeviceHdrSmpteSt209450FeaturesGOOGLE": {
+                                "$ref": "#/definitions/VkPhysicalDeviceHdrSmpteSt209450FeaturesGOOGLE"
                             },
                             "VkPhysicalDeviceHdrVividFeaturesHUAWEI": {
                                 "$ref": "#/definitions/VkPhysicalDeviceHdrVividFeaturesHUAWEI"
