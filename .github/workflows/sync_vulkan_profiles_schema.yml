@@ -66,5 +66,5 @@ jobs:
       env:
         GH_TOKEN: ${{ github.token }}
       run: |
-        gh pr merge ${{ steps.pr.outputs.pull-request-number }} --repo ${{ github.repository }} --squash --delete-branch
+        gh pr merge ${{ steps.pr.outputs.pull-request-number }} --repo ${{ github.repository }} --rebase --delete-branch
         gh workflow run build_and_deploy.yml --repo ${{ github.repository }} --ref main
