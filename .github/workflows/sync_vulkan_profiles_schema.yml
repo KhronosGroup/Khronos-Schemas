@@ -1,12 +1,12 @@
 name: Sync Vulkan Profiles Schema
 
 # Checks daily at noon Mountain Daylight Time (18:00 UTC) whether KhronosGroup/Vulkan-Profiles has a schema for a new Vulkan header
-# and opens a pull request adding it as vulkan/profiles-<schema>-<header>.json and
+# and merges a pull request adding it as vulkan/profiles-<schema>-<header>.json and
 # updating vulkan/profiles-0.8-latest.json.
 #
 # Requires "Allow GitHub Actions to create and approve pull requests" in
-# Settings > Actions > General. Pull requests opened with GITHUB_TOKEN do not trigger
-# the Schema CD workflow: close and reopen the pull request to run it.
+# Settings > Actions > General. Pushes and merges made with GITHUB_TOKEN do not trigger
+# the Schema CD workflow, so it is dispatched explicitly after the merge to deploy the site.
 
 on:
   schedule:
@@ -16,6 +16,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  actions: write
 
 jobs:
   sync:
@@ -49,6 +50,7 @@ jobs:
         echo "header_version=$header_version" >> "$GITHUB_OUTPUT"
 
     - name: Create pull request
+      id: pr
       if: steps.schema.outputs.file_name
       uses: peter-evans/create-pull-request@v7
       with:
@@ -58,3 +60,11 @@ jobs:
         body: |
           Adds `vulkan/${{ steps.schema.outputs.file_name }}` and updates `vulkan/profiles-0.8-latest.json` from
           https://github.com/KhronosGroup/Vulkan-Profiles/blob/main/schema/profiles-0.8-latest.json
+
+    - name: Merge pull request and deploy
+      if: steps.pr.outputs.pull-request-number
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        gh pr merge ${{ steps.pr.outputs.pull-request-number }} --repo ${{ github.repository }} --squash --delete-branch
+        gh workflow run build_and_deploy.yml --repo ${{ github.repository }} --ref main
