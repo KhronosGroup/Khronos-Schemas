@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-366.json#",
-    "title": "Vulkan Profiles Schema for Vulkan 1.4.366",
+    "$id": "https://schema.khronos.org/vulkan/profiles-0.8.2-367.json#",
+    "title": "Vulkan Profiles Schema for Vulkan 1.4.367",
     "additionalProperties": true,
     "required": [
         "capabilities",
@@ -1696,6 +1696,15 @@
             "additionalProperties": false,
             "properties": {
                 "maintenance11": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceMaintenance12FeaturesKHR": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "maintenance12": {
                     "type": "boolean"
                 }
             }
@@ -4970,6 +4979,7 @@
                 "VK_DRIVER_ID_APE_SOFT",
                 "VK_DRIVER_ID_ARM_PROPRIETARY",
                 "VK_DRIVER_ID_ARM_PROPRIETARY_KHR",
+                "VK_DRIVER_ID_AURORA_BOREALIS",
                 "VK_DRIVER_ID_BROADCOM_PROPRIETARY",
                 "VK_DRIVER_ID_BROADCOM_PROPRIETARY_KHR",
                 "VK_DRIVER_ID_COREAVI_PROPRIETARY",
@@ -5854,6 +5864,15 @@
                 },
                 "rgba4OpaqueBlackSwizzled": {
                     "type": "boolean"
+                }
+            }
+        },
+        "VkPhysicalDeviceMaintenance12PropertiesKHR": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "maxInputAttachmentIndex": {
+                    "$ref": "#/definitions/uint32_t"
                 }
             }
         },
@@ -10874,6 +10893,9 @@
                             "VK_KHR_maintenance11": {
                                 "type": "integer"
                             },
+                            "VK_KHR_maintenance12": {
+                                "type": "integer"
+                            },
                             "VK_KHR_maintenance2": {
                                 "type": "integer"
                             },
@@ -11919,6 +11941,9 @@
                             "VkPhysicalDeviceMaintenance11FeaturesKHR": {
                                 "$ref": "#/definitions/VkPhysicalDeviceMaintenance11FeaturesKHR"
                             },
+                            "VkPhysicalDeviceMaintenance12FeaturesKHR": {
+                                "$ref": "#/definitions/VkPhysicalDeviceMaintenance12FeaturesKHR"
+                            },
                             "VkPhysicalDeviceMaintenance4Features": {
                                 "$ref": "#/definitions/VkPhysicalDeviceMaintenance4Features"
                             },
@@ -12738,6 +12763,9 @@
                             },
                             "VkPhysicalDeviceMaintenance10PropertiesKHR": {
                                 "$ref": "#/definitions/VkPhysicalDeviceMaintenance10PropertiesKHR"
+                            },
+                            "VkPhysicalDeviceMaintenance12PropertiesKHR": {
+                                "$ref": "#/definitions/VkPhysicalDeviceMaintenance12PropertiesKHR"
                             },
                             "VkPhysicalDeviceMaintenance3Properties": {
                                 "$ref": "#/definitions/VkPhysicalDeviceMaintenance3Properties"
