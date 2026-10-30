@@ -1,0 +1,60 @@
+name: Sync Vulkan Profiles Schema
+
+# Checks daily at noon Mountain Daylight Time (18:00 UTC) whether KhronosGroup/Vulkan-Profiles has a schema for a new Vulkan header
+# and opens a pull request adding it as vulkan/profiles-<schema>-<header>.json and
+# updating vulkan/profiles-0.8-latest.json.
+#
+# Requires "Allow GitHub Actions to create and approve pull requests" in
+# Settings > Actions > General. Pull requests opened with GITHUB_TOKEN do not trigger
+# the Schema CD workflow: close and reopen the pull request to run it.
+
+on:
+  schedule:
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Fetch Vulkan Profiles schema
+      id: schema
+      shell: bash
+      run: |
+        curl -sfL -o "$RUNNER_TEMP/profiles.json" \
+          https://raw.githubusercontent.com/KhronosGroup/Vulkan-Profiles/main/schema/profiles-0.8-latest.json
+
+        schema_id=$(jq -r '."$id"' "$RUNNER_TEMP/profiles.json")
+        file_name=$(basename "${schema_id%#}")
+        if [[ ! "$file_name" =~ ^profiles-0\.8\.[0-9]+-([0-9]+)\.json$ ]]; then
+          echo "::error::Unexpected schema \$id: $schema_id"
+          exit 1
+        fi
+        header_version=${BASH_REMATCH[1]}
+
+        if [ -f "vulkan/$file_name" ]; then
+          echo "vulkan/$file_name is already published"
+          exit 0
+        fi
+
+        cp "$RUNNER_TEMP/profiles.json" "vulkan/$file_name"
+        cp "$RUNNER_TEMP/profiles.json" vulkan/profiles-0.8-latest.json
+        echo "file_name=$file_name" >> "$GITHUB_OUTPUT"
+        echo "header_version=$header_version" >> "$GITHUB_OUTPUT"
+
+    - name: Create pull request
+      if: steps.schema.outputs.file_name
+      uses: peter-evans/create-pull-request@v7
+      with:
+        branch: vulkan-profiles/${{ steps.schema.outputs.file_name }}
+        commit-message: "vulkan: Add ${{ steps.schema.outputs.header_version }} profile schema"
+        title: "vulkan: Add ${{ steps.schema.outputs.header_version }} profile schema"
+        body: |
+          Adds `vulkan/${{ steps.schema.outputs.file_name }}` and updates `vulkan/profiles-0.8-latest.json` from
+          https://github.com/KhronosGroup/Vulkan-Profiles/blob/main/schema/profiles-0.8-latest.json
