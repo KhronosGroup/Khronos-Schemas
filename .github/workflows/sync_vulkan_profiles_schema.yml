@@ -45,7 +45,18 @@ jobs:
         fi
 
         cp "$RUNNER_TEMP/profiles.json" "vulkan/$file_name"
-        cp "$RUNNER_TEMP/profiles.json" vulkan/profiles-0.8-latest.json
+
+        # Only replace the latest schema with a newer schema revision, or the same revision with a newer Vulkan header,
+        # so that a schema of an older revision doesn't replace a newer revision published manually
+        latest_id=$(jq -r '."$id"' vulkan/profiles-0.8-latest.json)
+        latest_name=$(basename "${latest_id%#}")
+        newest_name=$(printf '%s\n' "$latest_name" "$file_name" | sort -V | tail -n 1)
+        if [ "$newest_name" = "$file_name" ]; then
+          cp "$RUNNER_TEMP/profiles.json" vulkan/profiles-0.8-latest.json
+        else
+          echo "vulkan/profiles-0.8-latest.json is kept as $latest_name, newer than $file_name"
+        fi
+
         echo "file_name=$file_name" >> "$GITHUB_OUTPUT"
         echo "header_version=$header_version" >> "$GITHUB_OUTPUT"
 
