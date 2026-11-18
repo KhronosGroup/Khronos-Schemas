@@ -7208,7 +7208,7 @@
                     },
                     "queueFamiliesProperties": {
                         "type": "array",
-                        "uniqueItems": true,
+                        "uniqueItems": false,
                         "items": {
                             "type": "object",
                             "additionalProperties": false,
